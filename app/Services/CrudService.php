@@ -33,4 +33,9 @@ class CrudService
 
     }
 
+    public function updateUser(User $user)
+    {
+        
+    }
+
 }

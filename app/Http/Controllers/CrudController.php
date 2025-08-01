@@ -41,6 +41,12 @@ class CrudController extends Controller
         return redirect()->route('index');
     }
 
+    public function update(User $user)
+    {
+
+
+    }
+
     
 
 }
