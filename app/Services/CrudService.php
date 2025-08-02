@@ -33,20 +33,24 @@ class CrudService
 
     }
 
-    public function updateUser(array $data, User $user)
-    {
-        //pw foi enviado e a nao vazia
-        if ( isset($data['password']) && !empty($data['password'])  ) {
-            $data['password'] = Hash::make($data['password']);
-        } else {
-            unset($data['password']);
-        }
+   public function updateUser(array $data, User $user)
+   {
 
-
-
-        $user = $user->update($data);
-        return $user;
-        
+    //check if pw is set and not empty
+    if ( isset($data['password']) && !empty($data['password']) ) {
+        $data['password'] = Hash::make($data['password']);
+    } else {
+        unset($data['password']);
     }
+
+    $user = $user->update($data);
+
+    return $user;
+
+
+
+
+   }
+
 
 }

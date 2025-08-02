@@ -42,17 +42,24 @@ class CrudController extends Controller
         return redirect()->route('index');
     }
 
-
-
-
     public function update(CrudUpdateRequest $request, User $user)
     {
-
+        //validate 
         $validated = $request->validated();
+
+        //Service
         $user = $this->crudService->updateUser($validated, $user);
+
+        //return
         return redirect()->back();
+        
+
     }
 
+
+
+
+    
     
 
 }
