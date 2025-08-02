@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CrudRequest;
+use App\Http\Requests\CrudUpdateRequest;
 use App\Models\User;
 use App\Services\CrudService;
 use Illuminate\Http\Request;
@@ -41,10 +42,15 @@ class CrudController extends Controller
         return redirect()->route('index');
     }
 
-    public function update(User $user)
+
+
+
+    public function update(CrudUpdateRequest $request, User $user)
     {
 
-
+        $validated = $request->validated();
+        $user = $this->crudService->updateUser($validated, $user);
+        return redirect()->back();
     }
 
     

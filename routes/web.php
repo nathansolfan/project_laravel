@@ -18,3 +18,6 @@ Route::post('form', [CrudController::class, 'store']);
 Route::get('/seeUser/{user}', [CrudController::class, 'show']);
 
 Route::post('/delete/{user}', [CrudController::class, 'delete']);
+
+//update
+Route::post('/update/{user}', [CrudController::class, 'update']);

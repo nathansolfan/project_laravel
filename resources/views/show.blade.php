@@ -14,6 +14,24 @@
     @csrf
     <button type="submit" >Delete</button>
     </form>
+
+    <div>
+        <form action="/update/{{$user->id}}" method="post">
+            @csrf
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+
+            <label for="password">Password</label>
+            <input type="text" id="password" name="password">
+
+            <button type="submit">Update</button>
+        </form>
+    </div>
+
     
 </body>
 </html>
